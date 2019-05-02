@@ -17,15 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	private EmployeeRepository employeeRepository;
 	@Override
 	public List<Employee> getEmployees() {
-		long startQuery = System.currentTimeMillis();
 		List<Employee> employees = employeeRepository.findAll();
-		long endQuery = System.currentTimeMillis();
-		long timeQuery = endQuery - startQuery;
-		
-		long startQuery1 = System.currentTimeMillis();
-		List<EmployeeResponse> employeeResponses =employeeRepository.getAllEmployeeResponse();
-		long endQuery1 = System.currentTimeMillis();
-		long timeQuery1 = endQuery1 - startQuery1;
 		
 		return employees;
 	}
